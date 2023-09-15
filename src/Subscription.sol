@@ -135,7 +135,7 @@ contract Subscription {
     ) external view returns (bool) {
         uint256 currentBalance = getBalance(user);
         uint256 currentRate = subscriptions[user][recipient];
-        return currentBalance >= currentRate && currentRate == expectedRate;
+        return currentBalance >= currentRate && currentRate >= expectedRate;
     }
 
     function liquidateSubscriptions(
